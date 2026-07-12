@@ -1,0 +1,34 @@
+[
+  {
+    "id": "01",
+    "text": "Historical specimen records look quiet, but one bad reconciliation can corrupt biodiversity data for years. Specimen Casebook is an auditable evidence-reconciliation workspace for natural history collections. It is built around one rule: conflict preserved, science protected."
+  },
+  {
+    "id": "02",
+    "text": "A specimen label and a field ledger both point to nineteen oh seven. A legacy database says nineteen oh nine. If that database is copied forward, a transcription error becomes a published fact. The problem is not that digitization is slow. The problem is that uncertainty disappears during digitization."
+  },
+  {
+    "id": "03",
+    "text": "Our user is a herbarium collections data manager. They compare labels, field ledgers, old database rows, collector notebooks, and taxonomy histories. Today that work is manual, fragmented, and difficult to audit. Their need is simple: reconcile each field, preserve every disagreement, and show exactly where every proposed value came from."
+  },
+  {
+    "id": "04",
+    "text": "Here is the working prototype. Claude reads each source, extracts field-level claims with citations, and compares them field by field. The record summary separates confirmed values from inferred, conflicting, and missing evidence. The manager can inspect every source, open the conflict queue, review the provisional timeline, and prepare a Darwin Core export without losing provenance."
+  },
+  {
+    "id": "05",
+    "text": "This is the core demo. The specimen label says June seventeenth, nineteen oh seven. The field ledger says June nineteenth, nineteen oh seven. The legacy database says June seventeenth, nineteen oh nine. Specimen Casebook does not pick the most convenient answer. It marks the collection date as conflicting, keeps all three claims attached to their sources, and recommends: do not publish without human review. Without this safeguard, nineteen oh nine could ship as fact. With it, the disagreement remains visible and reviewable."
+  },
+  {
+    "id": "06",
+    "text": "The architecture separates language-model reasoning from publication policy. Claude converts unstructured evidence into cited claims. The reconciliation layer compares those claims. A human resolves only what the evidence supports. Finally, the approved record exports to Darwin Core with provenance attached. Claude proposes; the policy layer decides what can ship."
+  },
+  {
+    "id": "07",
+    "text": "We evaluate restraint, not just extraction. Our key metric is unsupported resolution rate: the share of conflicts collapsed into one answer without evidence. The target is zero percent. We also measure conflict detection, field-to-source accuracy, review triage, and time saved per specimen."
+  },
+  {
+    "id": "08",
+    "text": "Specimen Casebook turns scattered historical evidence into trustworthy biodiversity records without silent certainty. It is working software for the collections data managers science depends on. Explore the live demo and source code. Conflict preserved. Science protected."
+  }
+]

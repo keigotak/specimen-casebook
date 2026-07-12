@@ -1,0 +1,34 @@
+{
+  "caseId": "SCB-2025-0007",
+  "title": "Herbarium specimen — Tokyo, 1907",
+  "synthetic": true,
+  "intendedUse": "Specimen Casebook product demonstration only",
+  "sources": [
+    {
+      "id": "SRC-001",
+      "type": "specimen_label_transcription",
+      "path": "label_transcription.txt"
+    },
+    {
+      "id": "SRC-002",
+      "type": "field_ledger",
+      "path": "field_ledger.csv"
+    },
+    {
+      "id": "SRC-003",
+      "type": "legacy_database",
+      "path": "legacy_record.json"
+    },
+    {
+      "id": "SRC-004",
+      "type": "collector_notebook_transcription",
+      "path": "collector_notebook.txt"
+    },
+    {
+      "id": "SRC-005",
+      "type": "taxonomy_history",
+      "path": "taxonomy_history.csv"
+    }
+  ],
+  "expectedOutput": "expected_reconciliation.json"
+}

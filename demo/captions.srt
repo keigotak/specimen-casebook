@@ -1,0 +1,155 @@
+1
+00:00:00,500 --> 00:00:07,659
+Historical specimen records look quiet, but one bad reconciliation can corrupt biodiversity data for years.
+
+2
+00:00:07,659 --> 00:00:12,908
+Specimen Casebook is an auditable evidence-reconciliation workspace for natural history collections.
+
+3
+00:00:12,908 --> 00:00:17,681
+It is built around one rule: conflict preserved, science protected.
+
+4
+00:00:18,681 --> 00:00:23,630
+A specimen label and a field ledger both point to nineteen oh seven.
+
+5
+00:00:23,630 --> 00:00:26,294
+A legacy database says nineteen oh nine.
+
+6
+00:00:26,294 --> 00:00:31,243
+If that database is copied forward, a transcription error becomes a published fact.
+
+7
+00:00:31,243 --> 00:00:34,289
+The problem is not that digitization is slow.
+
+8
+00:00:34,289 --> 00:00:37,334
+The problem is that uncertainty disappears during digitization.
+
+9
+00:00:38,334 --> 00:00:41,835
+Our user is a herbarium collections data manager.
+
+10
+00:00:41,835 --> 00:00:47,524
+They compare labels, field ledgers, old database rows, collector notebooks, and taxonomy histories.
+
+11
+00:00:47,524 --> 00:00:51,900
+Today that work is manual, fragmented, and difficult to audit.
+
+12
+00:00:51,900 --> 00:01:00,214
+Their need is simple: reconcile each field, preserve every disagreement, and show exactly where every proposed value came from.
+
+13
+00:01:01,214 --> 00:01:03,331
+Here is the working prototype.
+
+14
+00:01:03,331 --> 00:01:09,681
+Claude reads each source, extracts field-level claims with citations, and compares them field by field.
+
+15
+00:01:09,681 --> 00:01:14,760
+The record summary separates confirmed values from inferred, conflicting, and missing evidence.
+
+16
+00:01:14,760 --> 00:01:24,496
+The manager can inspect every source, open the conflict queue, review the provisional timeline, and prepare a Darwin Core export without losing provenance.
+
+17
+00:01:25,496 --> 00:01:27,528
+This is the core demo.
+
+18
+00:01:27,528 --> 00:01:31,186
+The specimen label says June seventeenth, nineteen oh seven.
+
+19
+00:01:31,186 --> 00:01:34,844
+The field ledger says June nineteenth, nineteen oh seven.
+
+20
+00:01:34,844 --> 00:01:38,502
+The legacy database says June seventeenth, nineteen oh nine.
+
+21
+00:01:38,502 --> 00:01:42,160
+Specimen Casebook does not pick the most convenient answer.
+
+22
+00:01:42,160 --> 00:01:51,509
+It marks the collection date as conflicting, keeps all three claims attached to their sources, and recommends: do not publish without human review.
+
+23
+00:01:51,509 --> 00:01:55,573
+Without this safeguard, nineteen oh nine could ship as fact.
+
+24
+00:01:55,573 --> 00:01:58,825
+With it, the disagreement remains visible and reviewable.
+
+25
+00:01:59,825 --> 00:02:03,531
+The architecture separates language-model reasoning from publication policy.
+
+26
+00:02:03,531 --> 00:02:06,774
+Claude converts unstructured evidence into cited claims.
+
+27
+00:02:06,774 --> 00:02:09,554
+The reconciliation layer compares those claims.
+
+28
+00:02:09,554 --> 00:02:13,260
+A human resolves only what the evidence supports.
+
+29
+00:02:13,260 --> 00:02:18,356
+Finally, the approved record exports to Darwin Core with provenance attached.
+
+30
+00:02:18,356 --> 00:02:22,525
+Claude proposes; the policy layer decides what can ship.
+
+31
+00:02:23,525 --> 00:02:26,121
+We evaluate restraint, not just extraction.
+
+32
+00:02:26,121 --> 00:02:33,476
+Our key metric is unsupported resolution rate: the share of conflicts collapsed into one answer without evidence.
+
+33
+00:02:33,476 --> 00:02:35,639
+The target is zero percent.
+
+34
+00:02:35,639 --> 00:02:41,696
+We also measure conflict detection, field-to-source accuracy, review triage, and time saved per specimen.
+
+35
+00:02:42,696 --> 00:02:48,805
+Specimen Casebook turns scattered historical evidence into trustworthy biodiversity records without silent certainty.
+
+36
+00:02:48,805 --> 00:02:54,445
+It is working software for the collections data managers science depends on.
+
+37
+00:02:54,445 --> 00:02:57,734
+Explore the live demo and source code.
+
+38
+00:02:57,734 --> 00:02:58,674
+Conflict preserved.
+
+39
+00:02:58,674 --> 00:02:59,614
+Science protected.

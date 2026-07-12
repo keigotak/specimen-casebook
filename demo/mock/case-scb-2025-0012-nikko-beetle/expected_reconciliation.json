@@ -1,0 +1,47 @@
+{
+  "caseId": "SCB-2025-0012",
+  "synthetic": true,
+  "publicationDecision": "REVIEW_REQUIRED",
+  "note": "Expected semantics, not an exact fixture. Source ids (SRC-001..SRC-005) are assigned by upload order, so the numbers here are illustrative. A live run against claude-opus-4-8 also surfaces catalog number 5581 vs TNS-I-0055581 as CONFLICTING and may treat elevation as CONFIRMED rather than INFERRED; that is acceptable — the invariant is only that no conflict is silently resolved.",
+  "fields": {
+    "recordedBy": {
+      "status": "CONFLICTING",
+      "provisionalValue": null,
+      "candidates": [
+        { "value": "K. Yamada", "sources": ["SRC-001", "SRC-003", "SRC-004"] },
+        { "value": "K. Yamamoto", "sources": ["SRC-002"] }
+      ],
+      "recommendedAction": "Do not publish without human review"
+    },
+    "collectionDate": {
+      "status": "CONFLICTING",
+      "provisionalValue": null,
+      "candidates": [
+        { "value": "1934-08-05", "sources": ["SRC-001", "SRC-003", "SRC-004"] },
+        { "value": "1934-08-15", "sources": ["SRC-002"] }
+      ],
+      "recommendedAction": "Do not publish without human review"
+    },
+    "scientificName": {
+      "status": "CONFLICTING",
+      "provisionalValue": null,
+      "candidates": [
+        { "value": "Carabus insulicola Chaudoir", "sources": ["SRC-001", "SRC-005"] },
+        { "value": "Carabus (Ohomopterus) insulicola", "sources": ["SRC-003", "SRC-005"] }
+      ]
+    },
+    "verbatimLocality": {
+      "status": "CONFIRMED",
+      "provisionalValue": "Nikko, Tochigi Prefecture",
+      "sources": ["SRC-001", "SRC-002", "SRC-003", "SRC-004"]
+    },
+    "country": { "status": "CONFIRMED", "provisionalValue": "Japan", "sources": ["SRC-003"] },
+    "elevation": { "status": "INFERRED", "provisionalValue": "approximately 1,300 m", "sources": ["SRC-004"] },
+    "family": { "status": "MISSING", "provisionalValue": null }
+  },
+  "evaluationAssertions": {
+    "requiredConflictFields": ["recordedBy", "collectionDate"],
+    "forbiddenSilentResolution": { "recordedBy": "K. Yamada" },
+    "unsupportedResolutionRateTarget": 0
+  }
+}

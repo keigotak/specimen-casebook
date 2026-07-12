@@ -1,0 +1,15 @@
+{
+  "caseId": "SCB-2025-0012",
+  "title": "Ground-beetle specimen — Nikko, 1934",
+  "synthetic": true,
+  "intendedUse": "Specimen Casebook product demonstration only",
+  "headlineConflict": "Collector identity: the museum ledger records a different surname (Yamamoto) and day (Aug 15) than the label, diary, and accession card (Yamada, Aug 5).",
+  "sources": [
+    { "id": "SRC-001", "type": "specimen_label_transcription", "path": "label_transcription.txt" },
+    { "id": "SRC-002", "type": "field_ledger", "path": "field_ledger.csv" },
+    { "id": "SRC-003", "type": "accession_card", "path": "accession_card.json" },
+    { "id": "SRC-004", "type": "collector_diary_transcription", "path": "collector_diary.txt" },
+    { "id": "SRC-005", "type": "determination_history", "path": "determination_history.csv" }
+  ],
+  "expectedOutput": "expected_reconciliation.json"
+}

@@ -1,0 +1,73 @@
+{
+  "caseId": "SCB-2025-0007",
+  "synthetic": true,
+  "publicationDecision": "REVIEW_REQUIRED",
+  "fields": {
+    "scientificName": {
+      "status": "CONFIRMED",
+      "provisionalValue": "Rhododendron indicum (L.) Sweet",
+      "sources": ["SRC-003", "SRC-005"]
+    },
+    "originalName": {
+      "status": "CONFIRMED",
+      "provisionalValue": "Rhododendron indica L.",
+      "sources": ["SRC-001", "SRC-002", "SRC-003", "SRC-005"]
+    },
+    "recordedBy": {
+      "status": "CONFIRMED",
+      "provisionalValue": "T. Nakai",
+      "sources": ["SRC-001", "SRC-002", "SRC-003", "SRC-004"]
+    },
+    "collectionDate": {
+      "status": "CONFLICTING",
+      "provisionalValue": null,
+      "candidates": [
+        {
+          "value": "1907-06-17",
+          "sources": ["SRC-001", "SRC-004"]
+        },
+        {
+          "value": "1907-06-19",
+          "sources": ["SRC-002"]
+        },
+        {
+          "value": "1909-06-17",
+          "sources": ["SRC-003"]
+        }
+      ],
+      "recommendedAction": "Do not publish without human review"
+    },
+    "verbatimLocality": {
+      "status": "CONFLICTING",
+      "provisionalValue": null,
+      "candidates": [
+        {
+          "value": "Mt. Takao, Musashi Province",
+          "sources": ["SRC-001", "SRC-003", "SRC-004"]
+        },
+        {
+          "value": "Mt. Takau, Musashi Province",
+          "sources": ["SRC-002"]
+        }
+      ],
+      "recommendedAction": "Confirm spelling from original evidence"
+    },
+    "habitat": {
+      "status": "INFERRED",
+      "provisionalValue": "Forest edge",
+      "sources": ["SRC-004"]
+    },
+    "elevation": {
+      "status": "INFERRED",
+      "provisionalValue": "approximately 500 m",
+      "sources": ["SRC-004"]
+    }
+  },
+  "evaluationAssertions": {
+    "requiredConflictFields": ["collectionDate", "verbatimLocality"],
+    "forbiddenSilentResolution": {
+      "collectionDate": "1909-06-17"
+    },
+    "unsupportedResolutionRateTarget": 0
+  }
+}
