@@ -44,7 +44,8 @@ def make_captions(segments: list[dict], durations: list[float]) -> None:
     caption_index = 1
     slide_start = 0.0
     for segment, narration_seconds in zip(segments, durations):
-        sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", segment["text"]) if s.strip()]
+        caption_text = segment.get("caption", segment["text"])
+        sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", caption_text) if s.strip()]
         weights = [max(1, len(sentence.split())) for sentence in sentences]
         weight_total = sum(weights)
         cursor = slide_start + 0.5
@@ -68,6 +69,18 @@ def main() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     narration_durations = [audio_duration(AUDIO / f"narration-{item['id']}.wav") for item in segments]
     make_captions(segments, narration_durations)
+
+    total_seconds = sum(narration_durations) + len(segments) * 1.0
+    if total_seconds > TARGET_SECONDS:
+        over = total_seconds - TARGET_SECONDS
+        spoken_words = sum(len(item["text"].split()) for item in segments)
+        words_per_second = spoken_words / total_seconds if total_seconds else 0.0
+        trim_words = round(over * words_per_second)
+        raise SystemExit(
+            f"Narration runs {total_seconds:.1f}s but the video is capped at "
+            f"{TARGET_SECONDS:.0f}s. The ending would be cut off. Shorten "
+            f"narration.json by roughly {trim_words} words (~{over:.1f}s) and re-run."
+        )
 
     rendered: list[Path] = []
     for item, narration_seconds in zip(segments, narration_durations):
